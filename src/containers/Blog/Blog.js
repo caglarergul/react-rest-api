@@ -27,7 +27,7 @@ state = {
     }
 
     postSelectedHandler = (id) => {
-this.setState({selectedPostId: id});
+        this.setState({selectedPostId: id});
     };
 
 
