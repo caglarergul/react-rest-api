@@ -5,13 +5,9 @@ import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
 
 
-
 import './Blog.css';
 
 class Blog extends Component {
-
-
-
 
 
     render() {
@@ -23,7 +19,9 @@ class Blog extends Component {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to={{
-                                pathname:'/new-post'
+                                pathname: this.props.match.url + '/new-post',
+                                hash: "#submit",
+                                search: "?searchkey=sdfsdf"
                             }}>New Post</Link></li>
                         </ul>
                     </nav>
@@ -31,8 +29,8 @@ class Blog extends Component {
 
                 {/* <Route path="/" exact render={() => <h1>Home</h1>} />*/}
 
-                <Route path="/" exact component={Posts} />
-                <Route path="/new-post"  component={NewPost} />
+                <Route path="/" exact component={Posts}/>
+                <Route path="/new-post" component={NewPost}/>
 
             </div>
         );
