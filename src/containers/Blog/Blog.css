@@ -19,6 +19,6 @@
     font-weight: bold;
 }
 
-.Blog li a:hover, .Blog li a:active {
+.Blog li a:hover, .Blog li a:active,.Blog li a.active {
     color: #ff6600;
 }
