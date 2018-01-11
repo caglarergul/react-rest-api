@@ -7,6 +7,8 @@
     margin: 10px;
     box-sizing: border-box;
     cursor: pointer;
+    min-height: 200px;
+
 }
 
 .Post:hover,
