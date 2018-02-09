@@ -8,6 +8,9 @@ import './Blog.css';
 
 class Blog extends Component {
 
+    state = {
+        auth: true
+    };
 
     render() {
 
@@ -21,9 +24,7 @@ class Blog extends Component {
                                          activeClassName="my-active"
                                          activeStyle={{color: "#cc0000"}}>Posts</NavLink></li>
                             <li><NavLink to={{
-                                pathname: '/new-post',
-                                hash: "#submit",
-                                search: "?searchkey=sdfsdf"
+                                pathname: '/new-post'
                             }}>New Post</NavLink></li>
                         </ul>
                     </nav>
@@ -32,9 +33,10 @@ class Blog extends Component {
                 {/* <Route path="/" exact render={() => <h1>Home</h1>} />*/}
 
                 <Switch>
-                    <Route path="/new-post" component={NewPost}/>
+                    {this.state.auth ?  <Route path="/new-post" component={NewPost}/> : null }
                     <Route path="/posts"  component={Posts}/>
                     <Redirect from="/" to="/posts" />
+                    {/*<Route render={() => <h1>Not Found</h1>} />*/}
                 </Switch>
             </div>
         );
